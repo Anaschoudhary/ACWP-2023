@@ -15,6 +15,7 @@ use ACWP_THEME\Inc\Traits\Singleton;
     protected function __construct(){
 
         Assets::get_instance();
+        Menus::get_instance();
         $this->setup_hooks();
     }
 
@@ -39,8 +40,27 @@ use ACWP_THEME\Inc\Traits\Singleton;
              'default-color' => '0000ff',
              'default-image' => '',
         ]);
-    }
-        
 
+        add_theme_support('post-thumbnails');
+        add_theme_support('customize-selective-refresh-widgets');
+        add_theme_support('automatic-feed-links');
+        add_theme_support( 'html5', [
+                'comment-list', 
+                'comment-form',
+                'search-form',
+                'gallery',
+                'caption',
+                'script',
+                'style'
+                ] );
+        add_editor_style();
+        add_theme_support('wp-blocks-styles');
+        add_theme_support('align-wide');
+        
+        global $content_width;
+        if(!isset($content_width)){
+            $content_width;
+        }
+    }
   
 }
