@@ -15,6 +15,7 @@ if(!defined('ACWP_DIR_URI')){
 }
 
 require_once ACWP_DIR_PATH . '/inc/helpers/autoloader.php';
+require_once ACWP_DIR_PATH . '/inc/helpers/template-tags.php';
 
 function acwp_get_theme_instance (){
     

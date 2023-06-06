@@ -16,6 +16,7 @@ use ACWP_THEME\Inc\Traits\Singleton;
 
         Assets::get_instance();
         Menus::get_instance();
+        Meta_Boxes::get_instance();
         $this->setup_hooks();
     }
 
@@ -42,6 +43,9 @@ use ACWP_THEME\Inc\Traits\Singleton;
         ]);
 
         add_theme_support('post-thumbnails');
+
+        add_image_size('featured-thumbnail', 350, 233, true);
+
         add_theme_support('customize-selective-refresh-widgets');
         add_theme_support('automatic-feed-links');
         add_theme_support( 'html5', [
