@@ -77,3 +77,15 @@ function acwp_excerpt($trim_char_count = 0) {
 
     echo $excerpt . '[...]';
 }
+
+function acwp_excerpt_more($more=''){
+    
+    if(! is_single()){
+        $more = sprintf('<button class="mt-4 btn btn-info"><a class="acwp-read-more text-white" href="%1$s">%2$s</a></button>',
+        get_permalink(get_the_ID()),
+        __('Read more', 'acwp2023')  
+        );
+    }
+
+    return $more;
+}

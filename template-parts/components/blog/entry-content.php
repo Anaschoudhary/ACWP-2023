@@ -22,8 +22,16 @@
                             ),
                             the_title('<span class="screen-reader-text">"', '"</span>', false)
             );
+             wp_link_pages(
+            [
+                'before' => '<div class="page-links">'.esc_html__('Pages:', 'acwp2023'),
+                'after' => '</div>',
+            ]
+            );
         }else{
             acwp_excerpt(0);
+            echo acwp_excerpt_more();
         }
+       
     ?>
 </div>
