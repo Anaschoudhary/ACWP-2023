@@ -45,9 +45,12 @@ get_header();
             
             get_template_part('template-parts/content-none');
 
-        endif; 
-        
-        echo get_template_part('template-parts/content-none');?>
+        endif; ?>
+        <div class="container">
+            <?php 
+                acwp_pagination();
+            ?>
+        </div>
     </main>
 </div> 
 
