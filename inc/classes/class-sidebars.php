@@ -25,6 +25,7 @@ class Sidebars{
          * Actions
          */
         add_action('widgets_init', [$this, 'register_sidebars']);
+        add_action('widgets_init', [$this, 'register_clock_widget']);
     }
 
     public function register_sidebars(){
@@ -46,6 +47,10 @@ class Sidebars{
             'after_title'   => '</h3>',
         ) );
 
+    }
+
+    public function register_clock_widget(){
+        register_widget( 'ACWP_THEME\Inc\Clock_widget' );
     }
     
    
